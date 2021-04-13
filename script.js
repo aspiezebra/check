@@ -36,7 +36,7 @@ window.addEventListener("load", function(){
          alert("Make sure to enter valid information for each field!");
          event.preventDefault();
       } else {
-         inputOK = true;
+         inputOK = false;
       }
 
       const faultyItems = document.getElementById("faultyItems");
