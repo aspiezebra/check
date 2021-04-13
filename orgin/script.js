@@ -50,14 +50,14 @@ window.addEventListener("load", function() {
         const fuelStatus = document.getElementById("fuelStatus");
         const cargoStatus = document.getElementById("cargoStatus");
         let fuelOK = true;
-        let cargoOK = true;
+        let cargoOK = false;
 
         if (fuel.value < 10000) {
             fuelStatus.innerHTML = "Not enough fuel for launch";
             faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle not ready for launch";
             launchStatus.style.color = "red";
-            fuelOK = true;
+            let fuelOK = false;
         }
 
         if (mass.value > 10000) {
@@ -65,7 +65,7 @@ window.addEventListener("load", function() {
             faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle not ready for launch";
             launchStatus.style.color = "red";
-            cargoOK = true;
+            let cargoOK = true;
         }
 
         if (!inputOK) {
@@ -77,6 +77,12 @@ window.addEventListener("load", function() {
             launchStatus.innerHTML = "Shuttle is ready for launch";
             launchStatus.style.color = "green";
             faultyItems.style.visibility = "hidden";
+        } else if (mass.value > 10000 && fuelOK) {
+            fuelStatus.innerHTML = "Fuel level high enough for launch";
+            fuelOK = true;
+        } else if (fuel.value < 10000 && cargoOK) {
+            cargoStatus.innerHTML = "Cargo mass low enough for launch";
+            cargoOK = true
         }
     })
 })
