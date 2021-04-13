@@ -84,6 +84,7 @@ window.addEventListener("load", function() {
             cargoStatus.innerHTML = "Cargo mass low enough for launch";
             cargoOK = true
         }
+        let gjfd = 123
     })
 })
 
@@ -96,6 +97,7 @@ window.addEventListener("load", function() {
             mission.innerHTML = `
          <h2>Mission Destination</h2>
          <ol>
+
             <li>Name: ${json[r].name}</li>
             <li>Diameter: ${json[r].diameter}</li>
             <li>Star: ${json[r].star}</li>
