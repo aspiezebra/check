@@ -49,7 +49,7 @@ window.addEventListener("load", function(){
 
       const fuelStatus = document.getElementById("fuelStatus");
       const cargoStatus = document.getElementById("cargoStatus");
-      let fuelOK = false;
+      let fuelOK = true;
       let cargoOK = true;
       
       if (fuel.value< 10000){
@@ -57,7 +57,7 @@ window.addEventListener("load", function(){
          faultyItems.style.visibility = "visible";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
-         fuelOK = false;
+         fuelOK = true;
       }
          
       if (mass.value > 10000){
