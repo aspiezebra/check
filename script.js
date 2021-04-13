@@ -58,9 +58,7 @@ window.addEventListener("load", function(){
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
          fuelOK = false;
-      } else {
-         fuelStatus.innerHTML = "Fuel level high enough for launch";
-         fuelOK = true;
+      } 
       }
          
       if (mass.value > 10000){
@@ -69,9 +67,7 @@ window.addEventListener("load", function(){
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
          cargoOK = false;
-      } else {
-         cargoStatus.innerHTML = "Cargo mass low enough for launch";
-         cargoOK = true;
+      } 
       }
 
       if(!inputOK){
@@ -83,6 +79,12 @@ window.addEventListener("load", function(){
          launchStatus.innerHTML = "Shuttle is ready for launch";
          launchStatus.style.color = "green";
          faultyItems.style.visibility = "hidden";
+      } else if (mass.value > 10000 && fuelOK)  {
+         fuelStatus.innerHTML = "Fuel level high enough for launch";
+         fuelOK = true;
+      } else if (fuel.value< 10000 && cargoOK) {
+         cargoStatus.innerHTML = "Cargo mass low enough for launch";
+         cargoOK = true;
       }
    })
 })
