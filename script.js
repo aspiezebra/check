@@ -36,7 +36,7 @@ window.addEventListener("load", function(){
          alert("Make sure to enter valid information for each field!");
          event.preventDefault();
       } else {
-         inputOK = false;
+         inputOK = true;
       }
 
       const faultyItems = document.getElementById("faultyItems");
@@ -49,7 +49,7 @@ window.addEventListener("load", function(){
 
       const fuelStatus = document.getElementById("fuelStatus");
       const cargoStatus = document.getElementById("cargoStatus");
-      let fuelOK = true;
+      let fuelOK = false;
       let cargoOK = true;
       
       if (fuel.value< 10000){
