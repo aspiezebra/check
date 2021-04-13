@@ -57,7 +57,7 @@ window.addEventListener("load", function(){
          faultyItems.style.visibility = "visible";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
-         fuelOK = true;
+         fuelOK = false;
       }
          
       if (mass.value > 10000){
